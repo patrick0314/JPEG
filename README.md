@@ -51,7 +51,7 @@ JPEG 解碼：
 
 # Example
 
-[video](https://www.youtube.com/watch?v=CiZwDQNB9wo&ab_channel=0314Patrick)
+[video](https://www.youtube.com/watch?v=Gw5uktU8emo&ab_channel=0314Patrick)
 
 
 
