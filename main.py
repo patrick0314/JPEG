@@ -19,7 +19,7 @@ img_path = './pics'
 files = os.listdir(img_path)
 count = 1
 for file in files:
-    print('Now Operating img ', count, ' : ', file)
+    print('\nNow Operating img ', count, ' : ', file)
     filename = os.path.join(img_path, file)
     img = cv2.imread(filename)
     Y, Cr1, Cb1 = preprocess(filename)
@@ -31,23 +31,7 @@ for file in files:
     Y, Cr1, Cb1 = inv_dct(Y_DCT), inv_dct(Cr1_DCT), inv_dct(Cb1_DCT)
     img1 = postprocess(Y.astype(np.uint8), Cr1.astype(np.uint8), Cb1.astype(np.uint8))
 
-    '''
-    tmp1 = ''
-    for i in range(len(Y_H['DC'])):
-        tmp1 += Y_H['DC'][i]
-        for j in range(len(Y_H['AC'][i])):
-            tmp1 += Y_H['AC'][i][j]
-    tmp2 = ''
-    for i in range(len(Cr1_H['DC'])):
-        tmp1 += Cr1_H['DC'][i]
-        for j in range(len(Cr1_H['AC'][i])):
-            tmp1 += Cr1_H['AC'][i][j]
-    tmp3 = ''
-    for i in range(len(Cb1_H['DC'])):
-        tmp1 += Cb1_H['DC'][i]
-        for j in range(len(Cb1_H['AC'][i])):
-            tmp1 += Cb1_H['AC'][i][j]
-    total_number_of_bits = sys.getsizeof(tmp1) + sys.getsizeof(tmp2) + sys.getsizeof(tmp3)
+    total_number_of_bits = sys.getsizeof(Y_H) + sys.getsizeof(Cr1_H) + sys.getsizeof(Cb1_H)
     print('bpp = ', total_number_of_bits, '/', img.shape[:2], ' = ', total_number_of_bits/(img.shape[0]*img.shape[1]))
     ss = 0
     m = 0
@@ -58,10 +42,10 @@ for file in files:
     tmp = 255**2 / ((1/(3*img.shape[0]*img.shape[1])) * ss)
     PSNR = 10 * np.log10(tmp)
     print('PSNR = ', PSNR)
-    print('')
-    '''
 
     #cv2.imshow('test', img1)
     #cv2.waitKey(0)
 
     count += 1
+
+print('\n===== mission complete =====')
