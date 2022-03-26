@@ -21,18 +21,20 @@
 * **Huffman Coding**
     * 使用 Table for luminance DC coefficient differences 來做 Huffman coding 的結果：
     
-    ![](https://i.imgur.com/4UDekds.jpg)
+    ![](https://i.imgur.com/tVCGMqi.jpg)
+
     
     * 使用 Table for luminance AC coefficient 來做 Huffman coding 的結果：
 
-    ![](https://i.imgur.com/A74sU7k.jpg)
+    ![](https://i.imgur.com/fYwyq1Z.jpg)
+
 
 
 ## Performance
 
 一般影像的 bpp 基礎為 24，從下圖中可以發現，都有明顯幅度的壓縮成效。
 
-![](https://i.imgur.com/ixwMh9I.jpg)
+![](https://i.imgur.com/y50NKvf.jpg)
 
 
 ## Usage
@@ -51,7 +53,7 @@ JPEG 解碼：
 
 # Example
 
-[video](https://www.youtube.com/watch?v=Gw5uktU8emo&ab_channel=0314Patrick)
+
 
 
 
