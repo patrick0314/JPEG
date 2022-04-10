@@ -41,7 +41,7 @@
 
 ![](https://i.imgur.com/ofmvcoA.png)
 
-從上圖可以看出，在 <img src="https://latex.codecogs.com/png.image?\inline&space;\dpi{110}\bg{white}\tau&space;>&space;1" title="https://latex.codecogs.com/png.image?\inline \dpi{110}\bg{white}\tau > 1" />$\tau > 1$ 的時候，bpp 會下降，PSNR 則會上升；反之，在 $\tau < 1$ 的時候，bpp 會上升，PSNR 則會下降。
+從上圖可以看出，在 <img src="https://latex.codecogs.com/png.image?\inline&space;\dpi{110}\bg{white}\tau&space;>&space;1"/> 的時候，bpp 會下降，PSNR 則會上升；反之，在 $\tau < 1$ 的時候，bpp 會上升，PSNR 則會下降。
 
 ## Usage
 
