@@ -23,7 +23,7 @@ for file in files:
     filename = os.path.join(img_path, file)
     img = cv2.imread(filename)
 
-    taus = list(np.arange(0.5, 2.01, 0.05))
+    taus = list(np.arange(0.6, 2.01, 0.05))
     bpps = []
     psnrs = []
     for tau in taus:
