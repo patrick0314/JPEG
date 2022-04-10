@@ -57,6 +57,11 @@ JPEG 解碼：
 * 運行 `JPEGDecoding.py`
 * 解壓縮後的結果會放在 `./decode` 的資料夾
 
+Performance：
+
+* 執行 `main.py`
+* 會 output 出 bpp 和 PSNR
+
 # Example
 
 [video](https://www.youtube.com/watch?v=t0olBLgmxXc&ab_channel=0314Patrick)
