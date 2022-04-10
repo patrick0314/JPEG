@@ -48,19 +48,24 @@
 JPEG 編碼：
 
 * 將 image 放到 `./pics` 的資料夾
-* 運行 `JPEGEncoding.py`
+* 執行 `JPEGEncoding.py`
 * 壓縮後的結果會放在 `./encode` 的資料夾
 
 JPEG 解碼：
 
 * 確認壓縮後的結果放在 `./encode` 的資料夾
-* 運行 `JPEGDecoding.py`
+* 執行 `JPEGDecoding.py`
 * 解壓縮後的結果會放在 `./decode` 的資料夾
 
 Performance：
 
 * 執行 `main.py`
 * 會 output 出 bpp 和 PSNR
+
+Tau Performance：
+
+* 執行 `TauPerformance.py`
+* 會 output 出 τ vs bpp 以及 τ vs PSNR
 
 # Example
 
