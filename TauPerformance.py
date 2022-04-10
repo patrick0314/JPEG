@@ -50,15 +50,18 @@ for file in files:
         bpps.append(total_number_of_bits/(img.shape[0]*img.shape[1]))
         psnrs.append(PSNR)
 
-    figure = plt.figure(figsize=(10, 5))
-    figure.add_subplot(1, 2, 1)
+    figure = plt.figure(figsize=(15, 5))
+    figure.add_subplot(1, 3, 1)
     plt.plot(taus, bpps, color='blue')
-    plt.title('bpp vs tau')
+    plt.title('tau vs bpp')
     plt.axvline(x=1, color='black')
-    figure.add_subplot(1, 2, 2)
+    figure.add_subplot(1, 3, 2)
     plt.plot(taus, psnrs, color='blue')
-    plt.title('PSNR vs tau')
+    plt.title('tau vs PSNR')
     plt.axvline(x=1, color='black')
+    figure.add_subplot(1, 3, 3)
+    plt.plot(bpps, psnrs, color='blue')
+    plt.title('bpp vs PSNR')
     plt.show()
 
     count += 1
