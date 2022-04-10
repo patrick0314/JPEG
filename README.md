@@ -41,7 +41,7 @@
 
 ![](https://i.imgur.com/ofmvcoA.png)
 
-從上圖可以看出，在 τ > 1 的時候，bpp 會下降，PSNR 則會上升；反之，在 τ < 1 的時候，bpp 會上升，PSNR 則會下降。
+從上圖可以看出，在 τ > 1 的時候，bpp 會下降，PSNR 也會下降；反之，在 τ < 1 的時候，bpp 會上升，PSNR 也會上升。
 
 ## Usage
 
