@@ -39,7 +39,7 @@
 
 另外，可以從 Quantization 中的 table coefficient τ 來調整 bpp 和 PSNR 的結果：
 
-![](https://i.imgur.com/ofmvcoA.png)
+![](https://i.imgur.com/tHJ9x5F.png)
 
 從上圖可以看出，在 τ > 1 的時候，bpp 會下降，PSNR 也會下降；反之，在 τ < 1 的時候，bpp 會上升，PSNR 也會上升。
 
