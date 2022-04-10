@@ -36,6 +36,11 @@
 
 ![](https://i.imgur.com/y50NKvf.jpg)
 
+另外，可以從 Quantization 中的 table coefficient $/tau$ 來調整 bpp 和 PSNR 的結果：
+
+
+
+從上圖可以看出，在 $/tau > 1$ 的時候，bpp 會下降，PSNR 則會上升；反之，在 $/tau < 1$ 的時候，bpp 會上升，PSNR 則會下降。
 
 ## Usage
 
