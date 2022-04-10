@@ -220,6 +220,7 @@ def inv_runlength(coding, channal, mode):
                 else:
                     for _ in range(R): tmp.append(0)
                     tmp.append(actable[S-1][int(coding[pointer+l:pointer+l+S], 2)])
+
                 pointer += l + S
 
                 if len(tmp) == 63:
@@ -244,7 +245,7 @@ def inv_runlength(coding, channal, mode):
                 else:
                     d = dctable[i][int(idx, 2)]
                 terms.append(d)
-                pointer = pointer + code_length[i] + i
+                pointer += + code_length[i] + i
             return terms
         elif mode == 'AC':
             with open('./ref/actable.txt', 'rb') as f:
@@ -252,8 +253,8 @@ def inv_runlength(coding, channal, mode):
             TAC = jpegtable['TAC'] # table for luminance AC coefficients
             terms = []
             pointer = 0
+            tmp = []
             while pointer < len(coding):
-                tmp = []
                 # Find Code Word and Additional Code
                 for i in range(162):
                     l = len(TAC[i, 0][0])
@@ -286,6 +287,7 @@ def inv_runlength(coding, channal, mode):
 
                 if len(tmp) == 63:
                     terms.append(tmp)
+                    tmp = []
             return terms
 
 if __name__ == '__main__':
