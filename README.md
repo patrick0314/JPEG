@@ -37,11 +37,11 @@
 ![](https://i.imgur.com/49eXxU9.jpg)
 
 
-另外，可以從 Quantization 中的 table coefficient $\tau$ 來調整 bpp 和 PSNR 的結果：
+另外，可以從 Quantization 中的 table coefficient τ 來調整 bpp 和 PSNR 的結果：
 
 ![](https://i.imgur.com/ofmvcoA.png)
 
-從上圖可以看出，在 <img src="https://latex.codecogs.com/png.image?\inline&space;\dpi{110}\bg{white}\tau&space;>&space;1"/> 的時候，bpp 會下降，PSNR 則會上升；反之，在 $\tau < 1$ 的時候，bpp 會上升，PSNR 則會下降。
+從上圖可以看出，在 τ > 1 的時候，bpp 會下降，PSNR 則會上升；反之，在 τ < 1 的時候，bpp 會上升，PSNR 則會下降。
 
 ## Usage
 
