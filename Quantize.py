@@ -9,7 +9,7 @@ import numpy as np
 import cv2
 from matplotlib import pyplot as plt
 
-def quantize(F, channal):
+def quantize(F, channal, tau):
     if channal == 'Y':
         Q = np.array([[16, 11, 10, 16, 24, 40, 51, 61], \
                     [12, 12, 14, 19, 26, 58, 60, 55], \
@@ -28,7 +28,7 @@ def quantize(F, channal):
                     [99, 99, 99, 99, 99, 99, 99, 99], \
                     [99, 99, 99, 99, 99, 99, 99, 99], \
                     [99, 99, 99, 99, 99, 99, 99, 99]])
-
+    Q *= tau
     for i in range(F.shape[0]//8):
         for j in range(F.shape[1]//8):
             F[i*8:i*8+8, j*8:j*8+8] = F[i*8:i*8+8, j*8:j*8+8] / Q
@@ -36,7 +36,7 @@ def quantize(F, channal):
     F = np.round(F)
     return F
 
-def inv_quantize(F, channal):
+def inv_quantize(F, channal, tau):
     if channal == 'Y':
         Q = np.array([[16, 11, 10, 16, 24, 40, 51, 61], \
                     [12, 12, 14, 19, 26, 58, 60, 55], \
@@ -56,6 +56,7 @@ def inv_quantize(F, channal):
                     [99, 99, 99, 99, 99, 99, 99, 99], \
                     [99, 99, 99, 99, 99, 99, 99, 99]])
     
+    Q *= tau
     F = F.astype(np.float16)
     for i in range(F.shape[0]//8):
         for j in range(F.shape[1]//8):
@@ -73,8 +74,8 @@ if __name__ == '__main__':
 
         Y, Cr1, Cb1 = preprocess(filename)
         Y_DCT, Cr1_DCT, Cb1_DCT = dct(Y), dct(Cr1), dct(Cb1)
-        Y_Q, Cr1_Q, Cb1_Q = quantize(Y_DCT, 'Y'), quantize(Cr1_DCT, 'C'), quantize(Cb1_DCT, 'C')
-        Y_DCT, Cr1_DCT, Cb1_DCT = inv_quantize(Y_Q, 'Y'), inv_quantize(Cr1_Q, 'C'), inv_quantize(Cb1_Q, 'C')
+        Y_Q, Cr1_Q, Cb1_Q = quantize(Y_DCT, 'Y', 1), quantize(Cr1_DCT, 'C', 1), quantize(Cb1_DCT, 'C', 1)
+        Y_DCT, Cr1_DCT, Cb1_DCT = inv_quantize(Y_Q, 'Y', 1), inv_quantize(Cr1_Q, 'C', 1), inv_quantize(Cb1_Q, 'C', 1)
         Y, Cr1, Cb1 = inv_dct(Y_DCT), inv_dct(Cr1_DCT), inv_dct(Cb1_DCT)
         img = postprocess(Y.astype(np.uint8), Cr1.astype(np.uint8), Cb1.astype(np.uint8))
 
